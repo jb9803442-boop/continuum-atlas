@@ -1,3 +1,3 @@
-// Public browser credentials only. Never put a service_role/secret key here.
+// Public browser configuration only. Never use an administrative service_role key.
 export const SUPABASE_URL='https://ayuqtqjzbkjzvfgabwlq.supabase.co';
-export const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIUzI1NiIsInJlZiI6ImF5dXF0cWp6YmtqenZmZ2Fid2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNDYwNTcsImV4cCI6MjEwNTcyMjA1N30.sUMaSBCQixS-pE5tAreV4sADngYT94Jub09qM_XluSg';
+export const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF5dXF0cWp6YmtqenZmZ2Fid2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNDYwNTcsImV4cCI6MjEwNTcyMjA1N30.sUMaSBCQixS-pE5tAreV4sADngYT94Jub09qM_XluSg';
