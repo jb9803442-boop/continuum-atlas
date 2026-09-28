@@ -1,0 +1,106 @@
+from create_illustrations import *
+assets.clear()
+
+def hourglass():
+ return path('M76 27H164M76 174H164M84 29Q81 61 105 86L117 99L102 116Q82 138 85 171M155 29Q158 61 134 86L123 99L139 117Q157 139 155 171',M,2)+path('M93 59H147L121 94ZM93 162L120 132L148 162Z',C,1,'url(#copper)')+path('M120 100v24',C,2,extra='stroke-dasharray="2 5"')
+def damage_cell():
+ return path('M101 39Q67 35 54 68Q38 99 58 124Q72 150 109 154L129 140L139 155Q179 145 188 113Q196 77 171 56Q146 30 120 43',M,2,'url(#mint)')+path('M104 40L119 60L107 76L126 93',C,3)+circle(124,111,21,'url(#copper)',C)+path('M70 91l17 7M158 88l12 -7M155 123l13 8',C,2)
+add('aging-theories',hourglass(),'An hourglass frames the question of why organisms age.',True)
+s=''
+for i in range(10):
+ a=i*math.tau/10;x=120+66*math.cos(a);y=100+66*math.sin(a);s+=path(f'M120 100L{x} {y}',G,1)+circle(x,y,9,'url(#mint)' if i%2 else 'url(#copper)',M if i%2 else C)
+s+=circle(120,100,26)+text(120,104,'10',M,17)
+add('aging-mechanisms',s,'Ten selected mechanisms connect within a shared aging network.',True)
+add('aging-damage',damage_cell(),'A fractured cell symbolizes accumulated biological damage.',True)
+s=path('M32 151H209',G,1)+path('M40 69Q81 67 109 93T199 150',C,3)+path('M40 149V70M90 149V85M140 149V117M190 149V146',M,1.5)+circle(40,69,5)+circle(90,85,5)+circle(140,117,5)+circle(190,146,5)
+add('aging-consequences',s,'A stylized reserve curve symbolizes changing resilience, not a prediction.',True)
+
+s=path('M120 169V122L71 83L46 34M71 83L99 43M120 122L168 82L190 35M168 82L141 43',M,3)
+for x,y in [(46,34),(99,43),(141,43),(190,35)]:s+=circle(x,y,10,'url(#copper)',C)
+s+=text(120,191,'SELECTION · TRADE-OFFS',G,7)
+add('Evolutionary theories',s,'A branching evolutionary tree represents inheritance and life-history trade-offs.',True)
+s=path('M31 156H211',G,1)
+for col in range(5):
+ for row in range(col+1):s+=circle(49+col*35,144-row*25,8,'url(#copper)',C)
+s+=arrow(42,42,202,42)+text(120,24,'TIME',G,8)
+add('Damage accumulation',s,'Increasing stacks symbolize damage that persists when maintenance is incomplete.',True)
+s=ellipse(105,101,65,40,'url(#copper)',C)+path('M49 96Q60 64 70 100T92 103T114 103T138 99T161 99',M,3)+path('M176 45L158 76H174L166 105L191 68H177Z',M,1,'url(#mint)')
+for x,y in [(182,127),(201,96),(174,161)]:s+=circle(x,y,4,'none',C)
+add('Metabolic theories',s,'Energy-producing mitochondria and reactive by-products illustrate metabolic aging hypotheses.',True)
+s=hourglass()+path('M38 83H73M169 83H206M40 123H83M158 123H204',B,1)
+for x,y in [(38,83),(206,83),(40,123),(204,123)]:s+=circle(x,y,5)
+s+=text(120,192,'A DEBATED HYPOTHESIS',C,7)
+add('Programmed aging theories',s,'Clockwork-like connections symbolize debated programmed-aging explanations.',True)
+s=helix(109,20,157,25)+path('M75 62L92 77L80 90M139 121L152 134L142 151',C,3)
+for x,y in [(175,50),(186,139)]:s+=path(f'M{x-7} {y-9}l14 18M{x+7} {y-9}l-14 18',C,5)
+add('Genomic instability',s,'DNA disruptions and displaced chromosome fragments symbolize genome instability.',True)
+s=''
+for offset,cap in [(54,19),(119,11),(184,4)]:
+ s+=path(f'M{offset-10} 62L{offset+10} 140M{offset+10} 62L{offset-10} 140',M,7)
+ for sign in [-1,1]:
+  s+=path(f'M{offset+sign*10} 62l{sign*cap*.25} {-cap}M{offset+sign*10} 140l{sign*cap*.25} {cap}',C,7)
+s+=arrow(53,184,188,184)
+add('Telomere attrition',s,'Chromosome end caps become shorter across a stylized progression.',True)
+s=helix(107,20,155,23)
+for x,y in [(142,48),(75,81),(143,129)]:s+=path(f'M{x} {y}l14 -13',C,1.5)+circle(x+17,y-17,6,'url(#copper)',C)
+s+=path('M176 71v29M166 86h20',B,2)+path('M169 130h21',C,2)
+add('Epigenetic alterations',s,'Changing chemical marks on DNA symbolize altered gene regulation.',True)
+s=path('M27 95C14 39 99 37 87 88S34 141 73 155',M,5)+arrow(102,101,125,101)
+for x,y in [(152,73),(171,86),(188,70),(145,110),(172,111),(191,105),(162,137),(192,132)]:s+=circle(x,y,12,'url(#copper)',C)
+add('Loss of proteostasis',s,'A folded protein gives way to clustered aggregates when protein maintenance falters.',True)
+s=ellipse(116,100,82,47,'url(#copper)',C)+path('M46 93Q57 68 67 83L76 118L87 84M100 75L111 121L121 83M138 83L146 122L159 81L178 105',M,3)+path('M186 36L169 66H182L172 86',C,2)+path('M173 58l18 18M191 58l-18 18',C,2)
+add('Mitochondrial dysfunction',s,'Disordered inner folds and an interrupted energy symbol represent mitochondrial dysfunction.',True)
+s=ellipse(113,102,65,52)+circle(105,96,23,'url(#copper)',C)+path('M77 151h79',C,3)
+for x,y in [(191,58),(203,105),(180,156),(46,37)]:s+=circle(x,y,4,'url(#copper)',C)+path(f'M{x-8} {y}h-8',C,1)
+s+=path('M111 81v29M100 81v29',M,4)
+add('Cellular senescence',s,'A non-dividing cell releases signaling factors into its surroundings.',True)
+s=''
+for i in range(3):
+ x=52+i*69;s+=cell(x,66,22)
+ for j in range(3-i):s+=circle(x-15+j*15,135,6)
+ s+=arrow(x,95,x,117)
+s+=path('M31 162H207',G,1)+text(120,182,'DECLINING REGENERATIVE CAPACITY',G,7)
+add('Stem-cell exhaustion',s,'A diminishing pool of cell output illustrates declining regenerative capacity.',True)
+s=cell(54,100,29)+cell(188,100,29)+path('M87 81H114M133 81H155M88 117H109M130 117H153',M,2,extra='stroke-dasharray="3 5"')+path('M112 70L126 91L115 107L128 128',C,3)
+add('Altered cellular communication',s,'Interrupted signals between cells represent disrupted intercellular communication.',True)
+s=circle(120,103,42)+path('M102 94Q126 68 140 95Q132 121 107 124Z',C,2,'url(#copper)')
+for i in range(9):
+ a=i*math.tau/9;x=120+70*math.cos(a);y=103+70*math.sin(a);s+=circle(x,y,5,'url(#copper)',C)+path(f'M{x} {y}L{120+51*math.cos(a)} {103+51*math.sin(a)}',C,1)
+s+=path('M48 62Q113 5 179 54',C,2,extra='marker-end="url(#arrow)"')
+add('Chronic inflammation',s,'Repeated inflammatory signaling surrounds a cell in a persistent feedback loop.',True)
+s=circle(120,99,23)+text(120,103,'CELL',M,8)
+for x,y,t in [(52,46,'mTOR'),(187,46,'AMPK'),(50,159,'IGF'),(187,159,'SIRT')]:s+=path(f'M{x} {y}L120 99',G,1.5)+ellipse(x,y,26,17,'#163029',M)+text(x,y+3,t,M,8)
+add('Nutrient-sensing changes',s,'Nutrient-responsive signaling pathways converge on cellular growth and maintenance.',True)
+s=helix(108,21,155,28)+path('M63 86H153V110H63Z','#101e1b',1,'#101e1b')+path('M79 84l9 11l-7 11M137 84l-9 11l7 11',C,3)+arrow(183,99,149,99)
+add('DNA damage',s,'A visible break in a DNA double strand illustrates one form of DNA damage.')
+s=path('M35 119C15 48 112 31 119 76S166 161 190 109S142 57 161 42',M,5)+path('M92 59l12 23M151 127l15 13',C,7)
+for x,y in [(103,46),(173,135),(200,72)]:s+=circle(x,y,6,'url(#copper)',C)+text(x,y+3,'O',C,7)
+add('Protein damage',s,'Chemical modifications alter a folded protein’s structure and function.',True)
+add('Cellular damage',damage_cell()+path('M44 160L62 144M192 40L177 58',C,2),'Membrane disruption and injured internal structures represent damage to a cell.',True)
+s=''
+for j in range(3):
+ for i in range(5):
+  x=49+i*35;y=58+j*36
+  if (i,j) in [(2,1),(3,2)]:s+=path(f'M{x-12} {y-10}l24 20M{x+12} {y-10}l-24 20',C,2)
+  else:s+=ellipse(x,y,15,13)+circle(x,y,4,'url(#copper)',C)
+s+=path('M22 154Q83 126 113 159T217 153M25 167Q85 139 113 172T215 166',C,2)
+add('Tissue damage',s,'Disrupted cells and altered supporting fibers illustrate damage within tissue.',True)
+s=path('M116 58C88 30 59 53 64 87Q65 120 133 170Q176 126 177 86C177 53 149 42 131 63L132 31H117Z',C,2,'url(#copper)')+path('M97 70L112 99L99 119L126 144',M,2)+path('M120 79L145 87L129 110L151 124',M,2)+path('M28 165H213',G,1)+path('M36 156l15 -10l16 4l18 -6',M,2)
+add('Organ deterioration',s,'An illustrative heart with altered tissue patterns symbolizes reduced organ reserve.',True)
+s=group(brain(),'translate(4 5) scale(.95)')+path('M65 76L101 93M127 110L150 127',C,3)+circle(68,76,4,'url(#copper)',C)+circle(150,127,4,'url(#copper)',C)+path('M103 94l7 8M117 106l8 6',C,1,extra='stroke-dasharray="2 3"')
+add('Neural deterioration',s,'Interrupted connections on a brain outline symbolize declining neural integrity.',True)
+s=circle(121,37,13)+path('M119 52Q99 79 108 105L129 129L119 172M110 99L82 132L73 170M113 65L148 91L163 98',M,6)+path('M167 94Q176 88 176 100V177',C,3)+path('M55 180H192',G,1)
+add('Frailty',s,'A supported human figure symbolizes reduced physiological reserve, not all older adults.',True)
+s=path('M120 26L179 51V96Q170 141 120 177Q70 141 61 96V51Z',M,2,'url(#mint)')+path('M111 63h18v23h23v18h-23v23h-18v-23H88V86h23Z',C,1,'url(#copper)')+circle(180,145,14,'#382b27',C)+path('M180 137v9M180 150v1',C,2)
+add('Disease',s,'A medical shield and risk marker symbolize increased susceptibility to disease.',True)
+s=group(brain(),'translate(5 0) scale(.9)')+path('M61 115L82 83L113 106L142 76',C,2)+circle(61,115,4)+circle(82,83,4)+circle(113,106,4)+circle(142,76,4)+path('M156 139l15 7l16 14l19 6',C,2)
+add('Cognitive decline',s,'Changing neural activity symbolizes age-associated changes in cognitive function.',True)
+s=cell(65,94,35)+arrow(108,94,145,94)+circle(182,81,21,'none',G,extra='stroke-dasharray="3 4"')+circle(182,132,21,'none',G,extra='stroke-dasharray="3 4"')+path('M157 164H210',C,2)+text(120,188,'REDUCED REPAIR CAPACITY',G,7)
+add('Loss of regeneration',s,'A cell’s diminished ability to replenish new cells symbolizes reduced regeneration.',True)
+s=path('M31 40V160H212',G,1.5)+path('M38 148Q109 147 140 121T205 48',C,3)+text(120,186,'AGE',G,8)+text(62,26,'RISK',G,8)
+s+=circle(140,121,4)+circle(180,85,4)
+add('Mortality',s,'An unscaled population-level risk curve; it does not predict an individual lifespan.',True)
+branch={k:v for k,v in assets.items() if k.startswith('aging-')}
+topics={k:v for k,v in assets.items() if not k.startswith('aging-')}
+Path('public/aging-visuals.js').write_text('// Aging illustrations are independent of interface and scientific text.\nwindow.AGING_BRANCH_VISUALS='+json.dumps(branch,indent=2)+';\nObject.assign(window.TOPIC_VISUALS,'+json.dumps(topics,indent=2)+');\n')
+print('Created',len(topics),'aging topic illustrations and',len(branch),'branch illustrations.')

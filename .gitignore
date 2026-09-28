@@ -1,0 +1,22 @@
+node_modules/
+.cache/
+.local/
+.npm/
+.venv/
+__pycache__/
+playwright-report/
+test-results/
+coverage/
+dist/
+build/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+# Browser screenshots are local test artifacts. Retain reproducible avatar inputs.
+/*.png
+!/*-male-source.png
+# Local authentication tooling must never enter the repository.
+.netrc
+.git-credentials
