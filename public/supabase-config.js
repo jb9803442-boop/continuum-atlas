@@ -1,3 +1,3 @@
-// Public browser configuration. Never use a secret or service_role key.
-export const SUPABASE_URL='https://YOUR_PROJECT_REF.supabase.co';
-export const SUPABASE_ANON_KEY='YOUR_SUPABASE_PUBLISHABLE_OR_ANON_KEY';
+// Public browser credentials only. Never put a service_role/secret key here.
+export const SUPABASE_URL='https://ayuqtqjzbkjzvfgabwlq.supabase.co';
+export const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJIUzI1NiIsInJlZiI6ImF5dXF0cWp6YmtqenZmZ2Fid2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAxNDYwNTcsImV4cCI6MjEwNTcyMjA1N30.sUMaSBCQixS-pE5tAreV4sADngYT94Jub09qM_XluSg';

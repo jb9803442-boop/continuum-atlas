@@ -25,7 +25,7 @@ In Vercel project Settings → Environment Variables, set **GEMINI_API_KEY** for
 
 ### Supabase
 
-Replace placeholder values in `public/supabase-config.js` with a valid project URL and publishable/anon key, then redeploy. The previously supplied public key was rejected by Supabase; it was not silently replaced with a privileged key.
+The project URL and public anon key are now configured. A fresh read-only Auth settings check returned HTTP 200, with email authentication enabled and sign-ups allowed. No privileged key was used. Real email confirmation and recovery delivery still require end-to-end verification.
 
 In Supabase Authentication → URL Configuration, set the Site URL to the production origin and allow the callbacks:
 

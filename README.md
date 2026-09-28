@@ -51,11 +51,11 @@ GEMINI_API_KEY=your_key npm start
 
 ### Supabase accounts
 
-The public repository deliberately ships a **placeholder** `public/supabase-config.js`. Replace its values with your project URL and a **publishable** (`sb_publishable_…`) or legacy **anon** key.
+`public/supabase-config.js` contains the configured project URL and public **anon** key. These are browser-safe identifiers, not administrative credentials. For a fork, replace them with your own project URL and publishable/anon key.
 
 Never place a secret or `service_role` key in browser code. Configure email authentication and allowed callback URLs as described in [SUPABASE_SETUP.md](SUPABASE_SETUP.md).
 
-The supplied project configuration was not live-verified successfully: the previous public key returned HTTP 401. Authentication tests use mocked responses; successful email delivery and live account operations must be verified after configuring a valid project.
+The public key now passes a live read-only Auth settings check (HTTP 200); email authentication and sign-ups are enabled. Authentication tests use mocked responses; successful email delivery and a full live account flow still require verification.
 
 ## Data and security boundaries
 

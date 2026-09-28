@@ -2,11 +2,11 @@
 
 ## Repository configuration
 
-The repository ships placeholder values in `public/supabase-config.js`. Replace them with your project’s public configuration before using accounts. The notes below record the original integration check.
+The repository now contains the configured project URL and public anon key in `public/supabase-config.js`. For a fork, replace these with your own public project configuration.
 
 ## Current connection status
 
-The login interface and email/password flows are implemented. A read-only request to this project's `/auth/v1/settings` endpoint returned **HTTP 401 — Invalid API key** with the supplied public anon key. Real authentication is blocked until a valid public key is supplied. No real test accounts were created and no confirmation/reset emails were sent during development.
+The login interface and email/password flows are implemented. The latest read-only request to `/auth/v1/settings` returned **HTTP 200**, with email authentication enabled and sign-ups allowed. An earlier check returned 401; the current key is now accepted. No real test accounts were created and no confirmation/reset emails were sent during development.
 
 Project: `https://ayuqtqjzbkjzvfgabwlq.supabase.co`
 
