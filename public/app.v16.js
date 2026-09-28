@@ -90,7 +90,7 @@ function message(text,role){let div=document.createElement('div');div.className=
 const chatBuild='16';
 $('.chat-disclaimer').textContent='Atlas v'+chatBuild+' · AI can make mistakes. Not medical advice.';
 async function chatRequest(payload){
-  const endpoint=new URL(window.location.href);
+  const endpoint=new URL('./api/chat',window.location.href);
   endpoint.hash='';endpoint.searchParams.set('atlas_api','chat');
   endpoint.searchParams.set('chat_version',chatBuild);
   let response;

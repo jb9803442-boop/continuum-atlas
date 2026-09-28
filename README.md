@@ -15,9 +15,13 @@ An interactive exploration of longevity, personal identity, and possible human f
 
 This is a work in progress. The procedural character is stylized, not a finished realistic asset. Not all 141 atlas topics are transformation encounters. Simulated enhancements and conceptual outcomes are **not** clinical predictions, medical advice, quantified lifespan gains, or evidence of immortality.
 
+## Production deployment
+
+Frontend and serverless backend deployment instructions and configuration status are in [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## Run locally
 
-Requires Node.js 20 or newer and npm.
+Requires Node.js 22 and npm.
 
 ```sh
 npm ci

@@ -1,0 +1,9 @@
+.git
+node_modules
+tests
+docs
+*.py
+*-male-source.png
+*.log
+.env*
+!.env.example
